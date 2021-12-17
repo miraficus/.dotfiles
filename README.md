@@ -15,7 +15,7 @@ sudo unzip from-google.zip -d /usr/share/backgrounds/from-google
 rm from-google.zip
 ```
 
-Wallpapers from Windows Spotlight (Downloaded with [BilderGUI)](https://github.com/NietroMiner00/BilderGui):
+Wallpapers from Windows Spotlight (Downloaded with [BilderGUI)](https://github.com/NietroMiner00/BilderGui)):
 ```sh
 wget -O from-spotlight.zip https://www.dropbox.com/sh/nqb0yj9uv1vibci/AAAAgY7YDVB0RgqSfkMaDqICa?dl=1
 sudo unzip from-spotlight.zip -d /usr/share/backgrounds/from-spotlight
