@@ -22,8 +22,6 @@ sudo unzip from-spotlight.zip -d /usr/share/backgrounds/from-spotlight
 rm from-spotlight.zip
 ```
 
-
-https://www.dropbox.com/sh/nqb0yj9uv1vibci/AAAAgY7YDVB0RgqSfkMaDqICa?dl=1
 ## Notes
 
 * .bashrc and .zshrc are mostly default from arcolinux
