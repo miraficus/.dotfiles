@@ -13,6 +13,7 @@ arc-gtk-theme
 materia-gtk-theme
 arc-icon-theme
 elementary-icon-theme
+papirus-icon-theme
 breeze
 breeze-gtk
 alacritty
