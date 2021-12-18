@@ -24,3 +24,5 @@ vlc
 qt5ct
 sddm
 neofetch
+thunderbird
+blender
