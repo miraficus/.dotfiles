@@ -28,3 +28,4 @@ neofetch
 thunderbird
 blender
 chromium
+xfce4-clipman-plugin
