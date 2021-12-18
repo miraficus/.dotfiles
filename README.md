@@ -24,8 +24,8 @@ rm from-spotlight.zip
 ## Icons
 * [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-
-
+## Login Manager theme
+* [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
 ## Notes
 
 * .bashrc and .zshrc are mostly default from arcolinux
