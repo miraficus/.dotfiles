@@ -31,7 +31,7 @@ do
         if [[ ${osInfo[$f]} = pacman ]]; then
             echo -e "${GREEN}Installing packages!${NC}\n"
             sudo pacman --needed --ask 4 -Sy - < pkglist.txt
-            paru -S arcolinux-wallpapers-git ttf-ms-fonts sublime-text-4 vscodium
+            paru -S arcolinux-wallpapers-git ttf-ms-fonts sublime-text-4 vscodium otf-raleway ttf-mononoki
 
         else
             echo -e "${RED}Package manager not supported!${NC}"
