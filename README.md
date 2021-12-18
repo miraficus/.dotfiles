@@ -21,6 +21,10 @@ wget -O from-spotlight.zip https://www.dropbox.com/sh/nqb0yj9uv1vibci/AAAAgY7YDV
 sudo unzip from-spotlight.zip -d /usr/share/backgrounds/from-spotlight
 rm from-spotlight.zip
 ```
+## Icons
+* [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+
+
 
 ## Notes
 
