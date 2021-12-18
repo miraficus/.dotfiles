@@ -26,3 +26,4 @@ sddm
 neofetch
 thunderbird
 blender
+chromium
