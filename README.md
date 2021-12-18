@@ -2,7 +2,7 @@
 My personal dotfiles. I made this for myself and it is not properly tested.
 
 ## Installing
-Use `./installpkg.sh` to install needed packages on Arch based distributions.
+Install paru from aur and then use `./installpkg.sh` to install needed packages on Arch based distributions.
 Then copy dotfiles manualy.
 
 ## Wallpapers
