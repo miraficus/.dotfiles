@@ -34,7 +34,7 @@ rm from-spotlight.zip
 ## Compiz in XFCE4
 Im using `paru` to install compiz packages.
 ```sh
-paru -S compiz-gtk ccsm compiz-fusion-plugins-main compiz-fusion-plugins-extra metacity
+paru -S compiz-gtk ccsm compiz-fusion-plugins-main compiz-fusion-plugins-extra metacity emerald-gtk3 emerald-themes
 ```
 Thenc open `ccsm` and then set:
 * In Window Management: Move Window, Place Windows (Placement Mode: centered), Resize Windows, Shift witcher
