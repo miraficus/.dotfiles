@@ -189,9 +189,6 @@ alias sr="sudo reboot"
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 
-#other alases
-alias cd="cd .."
-
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
 ex ()
