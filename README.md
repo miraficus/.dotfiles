@@ -35,7 +35,7 @@ paru -S compiz-gtk ccsm compiz-fusion-plugins-main compiz-fusion-plugins-extra m
 Thenc open `ccsm` and then set:
 * In Window Management: Move Window, Place Windows (Placement Mode: centered), Resize Windows
 * In utility: Regex Matching, Session Management, Mouse position polling
-* In Effects: Animations, Animations Add-on, Windows decoration, Wobbly Windows
+* In Effects: Animations (Click on Edit and select Burn), Animations Add-on, Windows decoration, Wobbly Windows
 * In General: General options (Desktop size tab: Horizontal Virtual Size: 3)
 
 ## Notes
