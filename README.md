@@ -26,6 +26,14 @@ rm from-spotlight.zip
 
 ## Login Manager theme
 * [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
+
+## Compiz in XFCE4
+Im using `paru` to install compiz packages.
+```sh
+paru -S compiz-gtk ccsm compiz-fusion-plugins-main compiz-fusion-plugins-extra metacity
+```
+
+
 ## Notes
 
 * .bashrc and .zshrc are mostly default from arcolinux
