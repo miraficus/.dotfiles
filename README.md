@@ -36,6 +36,7 @@ Thenc open `ccsm` and then set:
 * In Window Management: Move Window, Place Windows (Placement Mode: centered), Resize Windows
 * In utility: Regex Matching, Session Management, Mouse position polling
 * In Effects: Animations, Animations Add-on, Windows decoration, Wobbly Windows
+* In General: General options (Desktop size tab: Horizontal Virtual Size: 3)
 
 ## Notes
 
