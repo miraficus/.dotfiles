@@ -38,6 +38,15 @@ Thenc open `ccsm` and then set:
 * In Effects: Animations (Click on Edit and select Burn), Animations Add-on, Windows decoration, Wobbly Windows
 * In General: General options (Desktop size tab: Horizontal Virtual Size: 3)
 
+Turn compiz on:
+```sh
+compiz --replace
+```
+To get the minimize and maximize buttons back:
+```sh
+gsettings set org.gnome.desktop.wm.preferences button-layout "'menu:minimize,maximize,close'"
+```
+
 ## Notes
 
 * .bashrc and .zshrc are mostly default from arcolinux
