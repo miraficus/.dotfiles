@@ -32,7 +32,10 @@ Im using `paru` to install compiz packages.
 ```sh
 paru -S compiz-gtk ccsm compiz-fusion-plugins-main compiz-fusion-plugins-extra metacity
 ```
-
+Thenc open `ccsm` and then set:
+* In Window Management: Move Window, Place Windows (Placement Mode: centered), Resize Windows
+* In utility: Regex Matching, Session Management, Mouse position polling
+* In Effects: Animations, Animations Add-on, Windows decoration, Wobbly Windows
 
 ## Notes
 
