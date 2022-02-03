@@ -25,37 +25,14 @@ rm from-spotlight.zip
 * [Nordic](https://github.com/EliverLara/Nordic)
 * [Dracula](https://github.com/dracula/gtk)
 
+## Program Launch commands
+Rofi: rofi -show drun -show-icons -theme Arc-Dark
+
 ## Icons
 * [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Login Manager theme
 * [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
-
-## Compiz in XFCE4
-Im using `paru` to install compiz packages.
-```sh
-paru -S compiz-gtk ccsm compiz-fusion-plugins-main compiz-fusion-plugins-extra metacity emerald-gtk3 emerald-themes
-```
-Thenc open `ccsm` and then set:
-* In Window Management: Move Window, Place Windows (Placement Mode: centered), Resize Windows, Shift witcher
-* In utility: Regex Matching, Session Management, Mouse position polling
-* In Effects: Animations (Click on Edit and select Burn), Animations Add-on, Windows decoration, Wobbly Windows
-* In General: General options (Desktop size tab: Horizontal Virtual Size: 3)
-
-Turn compiz on:
-```sh
-compiz --replace
-```
-
-Turn compiz off:
-```sh
-xfwm4 --replace
-```
-
-To get the minimize and maximize buttons back:
-```sh
-gsettings set org.gnome.desktop.wm.preferences button-layout "'menu:minimize,maximize,close'"
-```
 
 ## Notes
 
