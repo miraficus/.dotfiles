@@ -26,7 +26,8 @@ rm from-spotlight.zip
 * [Dracula](https://github.com/dracula/gtk)
 
 ## Program Launch commands
-Rofi: ```sh 
+Rofi: 
+```sh 
 rofi -show drun -show-icons -theme Arc-Dark 
 ```
 
