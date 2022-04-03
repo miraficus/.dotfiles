@@ -31,3 +31,4 @@ chromium
 xfce4-clipman-plugin
 rofi
 compton
+onboard
