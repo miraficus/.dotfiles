@@ -6,3 +6,4 @@ ttf-mononoki
 openrgb 
 dockbarx 
 xfce4-dockbarx-plugin 
+nordic-theme 
