@@ -35,6 +35,11 @@ rofi -show drun -show-icons -theme Arc-Dark
 * [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Login Manager theme
+```sh
+sudo systemctl disable lightdm-plymouth
+sudo systemctl enable sddm
+```
+
 * [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
 
 ## Notes
