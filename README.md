@@ -36,7 +36,7 @@ rofi -show drun -show-icons -theme Arc-Dark
 
 ## Login Manager theme
 ```sh
-sudo systemctl disable lightdm-plymouth
+sudo systemctl disable lightdm
 sudo systemctl enable sddm
 ```
 
