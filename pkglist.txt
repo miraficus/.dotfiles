@@ -23,6 +23,7 @@ git
 htop
 vlc
 qt5ct
+kvantum-qt5
 sddm
 neofetch
 thunderbird
