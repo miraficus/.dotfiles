@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-notifyd" version="1.0">
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="EndeavourOS Update Notifier"/>
+      <value type="string" value="Xfce volume control"/>
+      <value type="string" value="xfce4-power-manager"/>
+    </property>
+  </property>
+  <property name="plugin" type="empty">
+    <property name="log-only-today" type="bool" value="false"/>
+  </property>
+</channel>
