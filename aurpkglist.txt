@@ -7,3 +7,4 @@ openrgb
 dockbarx 
 xfce4-dockbarx-plugin 
 nordic-theme 
+sddm-config-editor-git 
