@@ -1,0 +1,8 @@
+ttf-ms-fonts 
+sublime-text-4 
+vscodium 
+otf-raleway 
+ttf-mononoki 
+openrgb 
+dockbarx 
+xfce4-dockbarx-plugin 
