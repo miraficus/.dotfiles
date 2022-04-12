@@ -40,6 +40,9 @@ sudo systemctl disable lightdm
 sudo systemctl enable sddm
 ```
 
+## Cool Fonts
+- [https://www.fontsquirrel.com/fonts/exo]
+
 * [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
 
 ## Notes
