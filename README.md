@@ -41,7 +41,7 @@ sudo systemctl enable sddm
 ```
 
 ## Cool Fonts
-- [https://www.fontsquirrel.com/fonts/exo]
+- [https://www.fontsquirrel.com/fonts/exo](Exo)
 
 * [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
 
