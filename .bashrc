@@ -1,26 +1,29 @@
+#      __  ____            _____                
+#     /  |/  (_)________ _/ __(_)______  _______
+#    / /|_/ / / ___/ __ `/ /_/ / ___/ / / / ___/
+#   / /  / / / /  / /_/ / __/ / /__/ /_/ (__  ) 
+#  /_/  /_/_/_/   \__,_/_/ /_/\___/\__,_/____/  
 #
 # ~/.bashrc
 #
 
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export HISTCONTROL=ignoreboth:erasedups
+### Exports
+export TERM="xterm-256color"                # getting proper colors
+export HISTCONTROL=ignoreboth:erasedups     # no duplicate entries
 
 # Make nano the default editor
-
 export EDITOR='nano'
 export VISUAL='nano'
 
-PS1='[\u@\h \W]\$ '
 
+### PROMPT
+# This is commented out if using starship prompt
+# PS1='[\u@\h \W]\$ '
+
+### PATH
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
@@ -29,8 +32,123 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-#ignore upper and lowercase when TAB completion
+if [ -d "$HOME/Applications" ] ;
+  then PATH="$HOME/Applications:$PATH"
+fi
+
+### CHANGE TITLE OF TERMINALS
+case ${TERM} in
+  xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|alacritty|st|konsole*)
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
+        ;;
+  screen*)
+    PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
+    ;;
+esac
+
+### Shoptd
+shopt -s autocd # change to named directory
+shopt -s cdspell # autocorrects cd misspellings
+shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s dotglob
+shopt -s histappend # do not overwrite history
+shopt -s expand_aliases # expand aliases
+
+### EXtractor for all kinds of archives
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+#Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
+
+### Aliases for software managment
+#Set colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+#Check for package manger
+declare -A osInfo;
+osInfo[/etc/redhat-release]=yum
+osInfo[/etc/arch-release]=pacman
+osInfo[/etc/gentoo-release]=emerge
+osInfo[/etc/SuSE-release]=zypp
+osInfo[/etc/debian_version]=apt-get
+
+for f in ${!osInfo[@]}
+do
+    if [[ -f $f ]];then
+        echo -e "Package manager:${BLUE} ${osInfo[$f]}${NC}\n"
+        if [[ ${osInfo[$f]} = pacman ]]; then
+            #echo -e "${GREEN}Using Pacman Aliases${NC}\n"
+            #Package manager aliases
+            #Fix typo's
+            alias udpate='sudo pacman -Syyu'
+            alias upate='sudo pacman -Syyu'
+            alias updte='sudo pacman -Syyu'
+            alias updqte='sudo pacman -Syyu'
+            alias upqll="paru -Syu --noconfirm"
+            alias upal="paru -Syu --noconfirm"
+
+            #pacman unlock
+            alias unlock="sudo rm /var/lib/pacman/db.lck"
+            alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
+
+            # pacman or pm
+            alias pacman='sudo pacman --color auto'
+            alias update='sudo pacman -Syyu'
+
+            # paru as aur helper - updates everything
+            alias pksyua="paru -Syu --noconfirm"    # update standard pkgs and AUR pkgs
+            alias parsua='paru -Sua --noconfirm'    # update only AUR pkgs
+            alias upall="paru -Syu --noconfirm"
+            alias updateaur="paru -Syu --noconfirm"
+
+            #Cleanup orphaned packages
+            alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+
+        elif [[ ${osInfo[$f]} = apt-get ]]; then
+            #echo -e "${GREEN}Using Apt Aliases${NC}\n"
+            #Package manager aliases
+            #Fix typo's
+            alias udpate='sudo apt update && sudo apt upgrade'
+            alias upate='sudo apt update && sudo apt upgrade'
+            alias updte='sudo apt update && sudo apt upgrade'
+            alias updqte='sudo apt update && sudo apt upgrade'
+
+            #Advanced Package Tool
+            alias pacman='sudo apt --color auto'
+            alias update='sudo apt update && sudo apt upgrade'
+
+        else
+            echo -e "${RED}Package manager not supported!${NC}"
+        fi
+    fi
+done
 
 #list
 alias ls='ls --color=auto'
@@ -39,15 +157,12 @@ alias ll='ls -la'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
 
+alias exaa='exa -lah'
+alias exah='exa -lh'
+
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw="pwd"
-alias udpate='sudo pacman -Syyu'
-alias upate='sudo pacman -Syyu'
-alias updte='sudo pacman -Syyu'
-alias updqte='sudo pacman -Syyu'
-alias upqll="paru -Syu --noconfirm"
-alias upal="paru -Syu --noconfirm"
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -57,34 +172,11 @@ alias fgrep='fgrep --color=auto'
 #readable output
 alias df='df -h'
 
-#pacman unlock
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
-
-#arcolinux logout unlock
-alias rmlogoutlock="sudo rm /tmp/arcologout.lock"
-
-#free
-alias free="free -mt"
-
-#use all cores
-alias uac="sh ~/.bin/main/000*"
-
 #continue download
 alias wget="wget -c"
 
 #userlist
 alias userlist="cut -d: -f1 /etc/passwd"
-
-# Aliases for software managment
-# pacman or pm
-alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syyu'
-
-# paru as aur helper - updates everything
-alias pksyua="paru -Syu --noconfirm"
-alias upall="paru -Syu --noconfirm"
-alias updateaur="paru -Syu --noconfirm"
 
 #grub update
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -119,14 +211,6 @@ alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/p
 alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
 
-#shoptd
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
-
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
 alias yta-best="youtube-dl --extract-audio --audio-format best "
@@ -145,9 +229,6 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 
 #iso and version used to install ArcoLinux
 alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
-
-#Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
 #search content with ripgrep
 alias rg="rg --sort path"
@@ -184,37 +265,12 @@ alias probe="sudo -E hw-probe -all -upload"
 
 #shutdown or reboot
 alias ssn="sudo shutdown now"
+alias shutdown="sudo shutdown"
 alias sr="sudo reboot"
+alias reboot="sudo reboot"
 
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
-
-# # ex = EXtractor for all kinds of archives
-# # usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   tar xf $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
 
 #create a file called .bashrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
@@ -223,3 +279,5 @@ ex ()
 
 # reporting tools
 neofetch
+
+eval "$(starship init bash)"
