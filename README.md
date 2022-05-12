@@ -25,6 +25,10 @@ rm from-spotlight.zip
 * [Nordic](https://github.com/EliverLara/Nordic)
 * [Dracula](https://github.com/dracula/gtk)
 
+## Grub Themes
+[Distro Grub Themes](https://www.gnome-look.org/p/1482847)
+[Xenlism](https://www.gnome-look.org/p/1440862)
+
 ## Program Launch commands
 Rofi: 
 ```sh 
