@@ -141,8 +141,24 @@ do
             alias updqte='sudo apt update && sudo apt upgrade'
 
             #Advanced Package Tool
-            alias pacman='sudo apt --color auto'
+            alias apt='sudo apt --color auto'
             alias update='sudo apt update && sudo apt upgrade'
+
+        elif [[ ${osInfo[$f]} = yum ]]; then
+            #echo -e "${GREEN}Using yum Aliases${NC}\n"
+            #Package manager aliases
+            #Fix typo's
+            alias udpate='sudo dnf update'
+            alias upate='sudo dnf update'
+            alias updte='sudo dnf update'
+            alias updqte='sudo dnf update'
+
+            #dnf
+            alias update='sudo dnf update'
+            alias dnf='sudo dnf --color auto'
+
+            #yum
+            alias yum='sudo yum --color auto'
 
         else
             echo -e "${RED}Package manager not supported!${NC}"
