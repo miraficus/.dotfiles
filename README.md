@@ -54,7 +54,7 @@ sudo systemctl enable sddm
 ## Programs
 - [GithubDesktop](https://github.com/shiftkey/desktop/releases)
 
-## Notes
+# Notes
 
 * pkglist.txt contains packagage that i use on arch linux
 * aurpkglist.txt contains packages from aur
