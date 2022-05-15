@@ -1,9 +1,8 @@
 # .dotfiles
-My personal dotfiles. I made this for myself and it is not properly tested.
+My personal dotfiles. I made this for myself and it is not guaranteed to work properly.
 
 ## Installing
-Install paru from aur and then use `./installpkg.sh` to install needed packages on Arch based distributions.
-Then copy dotfiles manualy.
+Copy dotfiles manualy.
 
 ## Wallpapers
 I backed up my collection of wallpapers on dropbox. Use `wget` to download those files and then `unzip` to extract those files to /usr/share/backgrounds.
@@ -21,6 +20,19 @@ wget -O from-spotlight.zip https://www.dropbox.com/sh/nqb0yj9uv1vibci/AAAAgY7YDV
 sudo unzip from-spotlight.zip -d /usr/share/backgrounds/from-spotlight
 rm from-spotlight.zip
 ```
+
+## Program Launch commands
+Rofi: 
+```sh 
+rofi -show drun -show-icons -theme Arc-Dark 
+```
+
+## Switch Login Manager
+```sh
+sudo systemctl disable lightdm
+sudo systemctl enable sddm
+```
+# Links
 ## Custom Themes 
 * [Nordic](https://github.com/EliverLara/Nordic)
 * [Dracula](https://github.com/dracula/gtk)
@@ -29,27 +41,20 @@ rm from-spotlight.zip
 * [Distro Grub Themes](https://www.gnome-look.org/p/1482847)
 * [Xenlism](https://www.gnome-look.org/p/1440862)
 
-## Program Launch commands
-Rofi: 
-```sh 
-rofi -show drun -show-icons -theme Arc-Dark 
-```
-
 ## Icons
 * [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Login Manager theme
-```sh
-sudo systemctl disable lightdm
-sudo systemctl enable sddm
-```
-
 * [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
 
 ## Cool Fonts
 - [Exo](https://www.fontsquirrel.com/fonts/exo)
 - [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono)
 
+## Programs
+- [GithubDesktop](https://github.com/shiftkey/desktop/releases)
+
 ## Notes
 
-* .bashrc and .zshrc are mostly default from arcolinux
+* pkglist.txt contains packagage that i use on arch linux
+* aurpkglist.txt contains packages from aur
