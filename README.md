@@ -26,6 +26,8 @@ Rofi:
 ```sh 
 rofi -show drun -show-icons -theme Arc-Dark 
 ```
+In Gnome add ` -normal-window ` flag for it to work.
+
 
 ## Switch Login Manager
 ```sh
