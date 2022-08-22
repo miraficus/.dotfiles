@@ -131,6 +131,10 @@ do
             #Cleanup orphaned packages
             alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
+            #switch between lightdm and sddm
+            alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
+            alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
+
         elif [[ ${osInfo[$f]} = apt-get ]]; then
             #echo -e "${GREEN}Using Apt Aliases${NC}\n"
             #Package manager aliases
@@ -165,6 +169,15 @@ do
         fi
     fi
 done
+
+#nix
+function nixsearch { nix-env -qaP | grep "$1"; } # use nixsearch 'package'
+function nixfix { ln -s /home/$USER/.nix-profile/share/applications/* /home/$USER/.local/share/applications/; } # fix apps not showing up in start menu or rofi/dmenu
+function nixinstall { nix-env -iA "$1"; } # use nixinstall 'nixpkgs.package'
+function nixremove { nix-env -e "$1"; }
+alias nixinstalled='nix-env -q' # lists installed packages
+alias nixupdate='nix-env -u' # updates all packages or specified package
+function nixinstallitself { curl -L https://nixos.org/nix/install | sh; } # install nix
 
 #list
 alias ls='ls --color=auto'
@@ -203,10 +216,6 @@ alias update-fc='sudo fc-cache -fv'
 #switch between bash and zsh
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-
-#switch between lightdm and sddm
-alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
-alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
 
 #quickly kill conkies
 alias kc='killall conky'
@@ -289,7 +298,6 @@ alias reboot="sudo reboot"
 alias xd="ls /usr/share/xsessions"
 
 #create a file called .bashrc-personal and put all your personal aliases
-#in there. They will not be overwritten by skel.
 
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
@@ -297,3 +305,5 @@ alias xd="ls /usr/share/xsessions"
 neofetch
 
 eval "$(starship init bash)"
+
+
