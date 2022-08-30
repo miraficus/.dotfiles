@@ -55,6 +55,8 @@ sudo systemctl enable sddm
 
 ## Programs
 - [GithubDesktop](https://github.com/shiftkey/desktop/releases)
+- [Starship Prompt](https://starship.rs/)
+- [Nix](https://nixos.org/download.html#nix-install-linux)
 
 # Notes
 
