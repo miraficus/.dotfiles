@@ -1,5 +1,5 @@
 favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop
-recent=github-desktop.desktop,dbx_preference.desktop
+recent=
 button-icon=endeavouros-icon
 button-single-row=false
 show-button-title=false

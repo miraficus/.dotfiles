@@ -20,7 +20,7 @@
         <value type="int" value="30"/>
         <value type="int" value="31"/>
         <value type="int" value="32"/>
-        <value type="int" value="34"/>
+        <value type="int" value="1"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
         <value type="int" value="5"/>
@@ -51,6 +51,8 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="připojení k síti wi-fi „wifi pepa 5g“ je aktivní: wifi pepa 5g (59 %)"/>
+        <value type="string" value="blueberry-tray.py"/>
         <value type="string" value="thunar"/>
         <value type="string" value="připojení k síti wi-fi „fuks5g“ je aktivní: fuks5g (67 %)"/>
         <value type="string" value="pamac-tray"/>
@@ -103,6 +105,14 @@
     <property name="plugin-34" type="string" value="dockbarx">
       <property name="orient" type="string" value="bottom"/>
       <property name="block-autohide" type="bool" value="false"/>
+    </property>
+    <property name="plugin-1" type="string" value="tasklist">
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="flat-buttons" type="bool" value="true"/>
+      <property name="show-wireframes" type="bool" value="false"/>
+      <property name="show-labels" type="bool" value="false"/>
+      <property name="grouping" type="uint" value="0"/>
+      <property name="middle-click" type="uint" value="1"/>
     </property>
   </property>
 </channel>
