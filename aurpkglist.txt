@@ -9,3 +9,6 @@ xfce4-dockbarx-plugin
 nordic-theme 
 sddm-config-editor-git 
 arc-kde-git 
+breeze-default-cursor-theme
+breeze-amber-cursor-theme
+breeze-snow-cursor-theme
