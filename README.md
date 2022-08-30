@@ -36,18 +36,19 @@ sudo systemctl enable sddm
 ```
 # Links
 ## Custom Themes 
-* [Nordic](https://github.com/EliverLara/Nordic)
-* [Dracula](https://github.com/dracula/gtk)
+- [Nordic](https://github.com/EliverLara/Nordic)
+- [Dracula](https://github.com/dracula/gtk)
+- [TokyoNight](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)
 
 ## Grub Themes
-* [Distro Grub Themes](https://www.gnome-look.org/p/1482847)
-* [Xenlism](https://www.gnome-look.org/p/1440862)
+- [Distro Grub Themes](https://www.gnome-look.org/p/1482847)
+- [Xenlism](https://www.gnome-look.org/p/1440862)
 
 ## Icons
-* [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Login Manager theme
-* [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
+- [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
 
 ## Cool Fonts
 - [Exo](https://www.fontsquirrel.com/fonts/exo)
