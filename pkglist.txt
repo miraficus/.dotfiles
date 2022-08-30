@@ -27,9 +27,7 @@ kvantum-qt5
 sddm
 neofetch
 thunderbird
-blender
 chromium
 xfce4-clipman-plugin
 rofi
-compton
 onboard
