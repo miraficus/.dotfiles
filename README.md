@@ -59,6 +59,9 @@ sudo systemctl enable sddm
 - [Starship Prompt](https://starship.rs/)
 - [Nix](https://nixos.org/download.html#nix-install-linux)
 
+## How To
+- [Wireguard](https://www.cyberciti.biz/faq/debian-10-set-up-wireguard-vpn-server/)
+
 # Notes
 
 * pkglist.txt contains packagage that i use on arch linux
