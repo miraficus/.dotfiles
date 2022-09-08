@@ -22,12 +22,17 @@ rm from-spotlight.zip
 ```
 
 ## Program Launch commands
-Rofi: 
+### Rofi: 
 ```sh 
 rofi -show drun -show-icons -theme Arc-Dark 
 ```
 In Gnome add ` -normal-window ` flag for it to work.
 
+### Alacritty:
+- Font too big on my laptop.
+```sh
+alacritty -o font.size=8
+```
 
 ## Switch Login Manager
 ```sh
