@@ -58,6 +58,7 @@ sudo systemctl enable sddm
 ## Cool Fonts
 - [Exo](https://www.fontsquirrel.com/fonts/exo)
 - [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono)
+- [CODE](https://www.dafont.com/code.font)
 
 ## Programs
 - [GithubDesktop](https://github.com/shiftkey/desktop/releases)
