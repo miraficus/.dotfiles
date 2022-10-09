@@ -64,6 +64,7 @@ sudo systemctl enable sddm
 - [GithubDesktop](https://github.com/shiftkey/desktop/releases)
 - [Starship Prompt](https://starship.rs/)
 - [Nix](https://nixos.org/download.html#nix-install-linux)
+- [MultiMC](https://multimc.org/#Download)
 
 ## How To
 - [Wireguard](https://www.cyberciti.biz/faq/debian-10-set-up-wireguard-vpn-server/)
