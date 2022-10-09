@@ -145,7 +145,7 @@ do
             alias updqte='sudo apt update && sudo apt upgrade'
 
             #Advanced Package Tool
-            alias apt='sudo apt --color auto'
+            alias apt='sudo apt'
             alias update='sudo apt update && sudo apt upgrade'
 
         elif [[ ${osInfo[$f]} = yum ]]; then
