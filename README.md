@@ -53,7 +53,7 @@ sudo systemctl enable sddm
 - [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Login Manager
-- [LightDM GUI Settings Editor](https://github.com/mjun/lightdm-gtk-greeter-settings)
+- [LightDM GUI Settings Editor](https://github.com/Xubuntu/lightdm-gtk-greeter-settings)
 
 ## Cool Fonts
 - [Exo](https://www.fontsquirrel.com/fonts/exo)
