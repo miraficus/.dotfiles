@@ -52,8 +52,8 @@ sudo systemctl enable sddm
 ## Icons
 - [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-## Login Manager theme
-- [Sddm Sugar Dark](https://github.com/MarianArlt/sddm-sugar-dark)
+## Login Manager
+- [LightDM GUI Settings Editor](https://github.com/mjun/lightdm-gtk-greeter-settings)
 
 ## Cool Fonts
 - [Exo](https://www.fontsquirrel.com/fonts/exo)
