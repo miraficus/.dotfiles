@@ -71,6 +71,10 @@ sudo systemctl enable sddm
 - [Wireguard Client](https://wireguard.how/client/ios/)
 - [UFW](https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-ufw-firewall-in-5-minutes/?utm_source=Linux_Unix_Command&utm_medium=faq&utm_campaign=nixcmd)
 
+## Server
+### Installer
+- [OVPN](https://github.com/angristan/openvpn-install)
+
 # Notes
 
 * pkglist.txt contains packagage that i use on arch linux
