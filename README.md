@@ -57,9 +57,8 @@ sudo systemctl enable sddm
 - [LightDM GUI Settings Editor](https://github.com/Xubuntu/lightdm-gtk-greeter-settings)
 
 ## Cool Fonts
-- [Exo](https://www.fontsquirrel.com/fonts/exo)
+- [Nerdfonts](https://www.nerdfonts.com/font-downloads)
 - [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono)
-- [CODE](https://www.dafont.com/code.font)
 
 ## Programs
 - [GithubDesktop](https://github.com/shiftkey/desktop/releases)
