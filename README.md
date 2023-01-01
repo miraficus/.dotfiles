@@ -41,9 +41,17 @@ sudo systemctl enable sddm
 ```
 # Links
 ## Custom Themes 
-- [Nordic](https://github.com/EliverLara/Nordic)
+### Whole
 - [Dracula](https://github.com/dracula/gtk)
+- [Solarized](https://ethanschoonover.com/solarized/)
+- [Nord](https://www.nordtheme.com/ports)
+
+### GTK
 - [TokyoNight](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)
+- [Nordic](https://github.com/EliverLara/Nordic)
+
+### Website
+- [Themer](https://themer.dev/)
 
 ## Grub Themes
 - [Distro Grub Themes](https://www.gnome-look.org/p/1482847)
