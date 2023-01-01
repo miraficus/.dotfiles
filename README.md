@@ -51,6 +51,7 @@ sudo systemctl enable sddm
 
 ## Icons
 - [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- [Kora](https://github.com/bikass/kora)
 
 ## Login Manager
 - [LightDM GUI Settings Editor](https://github.com/Xubuntu/lightdm-gtk-greeter-settings)
