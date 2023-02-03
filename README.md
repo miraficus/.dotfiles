@@ -67,6 +67,7 @@ sudo systemctl enable sddm
 ## Cool Fonts
 - [Nerdfonts](https://www.nerdfonts.com/font-downloads)
 - [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono)
+- [Sen](https://github.com/philatype/Sen)
 
 ## Programs
 - [GithubDesktop](https://github.com/shiftkey/desktop/releases)
