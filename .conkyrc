@@ -1,0 +1,75 @@
+-- Conky, a system monitor https://github.com/brndnmtthws/conky
+-- Variables https://conky.sourceforge.net/variables.html
+-- Config settings https://conky.sourceforge.net/config_settings.html
+--
+-- This configuration file is Lua code. You can write code in here, and it will
+-- execute when Conky loads. You can use it to generate your own advanced
+-- configurations.
+--
+--   print("Loading Conky config")
+--
+-- For more on Lua, see:
+-- https://www.lua.org/pil/contents.html
+
+conky.config = {
+    alignment = 'top_left',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    font = 'DejaVu Sans Mono:size=12',
+    gap_x = 120,
+    gap_y = 80,
+    minimum_height = 5,
+    minimum_width = 5,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'dock',
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+}
+
+conky.text = [[
+${color light green}Info${color ffbb33} $hr 
+${color light yellow}Hostname:$color $nodename
+${color light yellow}Uptime:$color $uptime
+${color light yellow}RAM Usage:$color $mem/$memmax
+${color light yellow}Swap Usage:$color $swap/$swapmax
+${color light yellow}CPU Frequency:$color $freq_g GHz
+${color light yellow}CPU Usage:$color $cpu%
+${color light yellow}Processes:$color $running_processes/$processes
+${color light yellow}Desktop:$color $desktop_number
+
+${color light green}File System${color ffbb33} $hr 
+${color light yellow}SSD:$color ${fs_used /}/${fs_size /}
+${color light yellow}HDD:$color ${fs_used /mnt/2TB-Ext4}/${fs_size /mnt/2TB-Ext4}
+
+${color light green}Networking${color ffbb33} $hr
+${color light yellow}Local IP:$color ${addr enp0s31f6}
+${color light yellow}Upload:$color ${upspeed enp0s31f6}
+${color light yellow}Download:$color ${downspeed enp0s31f6}
+${color light yellow}Total Upload:$color ${totalup enp0s31f6}
+${color light yellow}Total Download:$color ${totaldown enp0s31f6}
+]]
