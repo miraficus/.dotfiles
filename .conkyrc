@@ -60,7 +60,7 @@ ${color light yellow}Swap Usage:$color $swap/$swapmax
 ${color light yellow}CPU Frequency:$color $freq_g GHz
 ${color light yellow}CPU Usage:$color $cpu%
 ${color light yellow}Processes:$color $running_processes/$processes
-${color light yellow}Desktop:$color $desktop_number
+${color light yellow}Desktop:$color $desktop
 
 ${color light green}File System${color ffbb33} $hr 
 ${color light yellow}SSD:$color ${fs_used /}/${fs_size /}
