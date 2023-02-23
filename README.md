@@ -34,6 +34,12 @@ In Gnome add ` -normal-window ` flag for it to work.
 alacritty -o font.size=6
 ```
 
+### Steam:
+-Launch Steam minimized and replace 'Big Picture Mode' with 'Steamdeck Mode'
+```sh
+steam -gamepadui -nochatui -nofriendsui -silent
+```
+
 ## Switch Login Manager
 ```sh
 sudo systemctl disable lightdm
