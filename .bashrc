@@ -36,6 +36,10 @@ if [ -d "$HOME/Applications" ] ;
   then PATH="$HOME/Applications:$PATH"
 fi
 
+if [ -d "/var/lib/flatpak/exports/bin/" ] ;
+  then PATH="/var/lib/flatpak/exports/bin/:$PATH"
+fi
+
 ### CHANGE TITLE OF TERMINALS
 case ${TERM} in
   xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|alacritty|st|konsole*)
@@ -84,7 +88,7 @@ ex ()
 #Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
-### Aliases for software managment
+### Aliases for software management
 #Set colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -134,6 +138,12 @@ do
             #switch between lightdm and sddm
             alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
             alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
+
+            #get fastest mirrors in your neighborhood
+            alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+            alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
+            alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+            alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
 
         elif [[ ${osInfo[$f]} = apt-get ]]; then
             #echo -e "${GREEN}Using Apt Aliases${NC}\n"
@@ -193,6 +203,11 @@ alias exah='exa -lh'
 alias cd..='cd ..'
 alias pdw="pwd"
 
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -200,6 +215,7 @@ alias fgrep='fgrep --color=auto'
 
 #readable output
 alias df='df -h'
+alias free='free -m'                      # show sizes in MB
 
 #continue download
 alias wget="wget -c"
@@ -212,10 +228,6 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 #add new fonts
 alias update-fc='sudo fc-cache -fv'
-
-#switch between bash and zsh
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
 #quickly kill conkies
 alias kc='killall conky'
@@ -230,11 +242,10 @@ alias trizenskip='trizen -S --skipinteg'
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
-#get fastest mirrors in your neighborhood
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
+# Play video files in current dir by type
+alias playavi='vlc *.avi'
+alias playmov='vlc *.mov'
+alias playmp4='vlc *.mp4'
 
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
@@ -251,9 +262,6 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 #Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
-
-#iso and version used to install ArcoLinux
-alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 
 #search content with ripgrep
 alias rg="rg --sort path"
@@ -296,6 +304,11 @@ alias reboot="sudo reboot"
 
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
+
+# Pastebins
+alias tb="nc termbin.com 9999"    #Termbin Usage: (echo just testing! | tb)
+alias ix="curl -F 'f:1=<-' ix.io" #IX Usage: (echo just testing! | ix)
+#Fix this shit later:   function 0x0 { curl -F'file=@"$1"' https://0x0.st; } # 0x0 Usage: 0x0 image.png
 
 #create a file called .bashrc-personal and put all your personal aliases
 
