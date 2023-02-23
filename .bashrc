@@ -152,13 +152,13 @@ do
             #echo -e "${GREEN}Using yum Aliases${NC}\n"
             #Package manager aliases
             #Fix typo's
-            alias udpate='sudo dnf update'
-            alias upate='sudo dnf update'
-            alias updte='sudo dnf update'
-            alias updqte='sudo dnf update'
+            alias udpate='sudo dnf update -y'
+            alias upate='sudo dnf update -y'
+            alias updte='sudo dnf update -y'
+            alias updqte='sudo dnf update -y'
 
             #dnf
-            alias update='sudo dnf update'
+            alias update='sudo dnf update -y'
             alias dnf='sudo dnf --color auto'
 
             #yum
