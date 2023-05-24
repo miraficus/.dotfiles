@@ -51,6 +51,7 @@ sudo systemctl enable sddm
 - [Dracula](https://github.com/dracula/gtk)
 - [Solarized](https://ethanschoonover.com/solarized/)
 - [Nord](https://www.nordtheme.com/ports)
+- [Catppuccin](https://github.com/catppuccin)
 
 ### GTK
 - [TokyoNight](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)
