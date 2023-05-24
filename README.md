@@ -24,9 +24,9 @@ rm from-spotlight.zip
 ## Program Launch commands
 ### Rofi: 
 ```sh 
-rofi -show drun -show-icons -theme Arc-Dark 
+rofi -show drun -show-icons -theme Arc-Dark -click-to-exit
 ```
-In Gnome add ` -normal-window ` flag for it to work.
+In Gnome add ` -normal-window -[no-]steal-focus` flag for it to work.
 
 ### Alacritty:
 - Font too big on my laptop.
