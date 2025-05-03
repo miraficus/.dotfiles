@@ -57,6 +57,9 @@ sudo systemctl enable sddm
 - [TokyoNight](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)
 - [Nordic](https://github.com/EliverLara/Nordic)
 
+### Effects
+- [Burn-My-Windows](https://github.com/Schneegans/Burn-My-Windows)
+
 ### Website
 - [Themer](https://themer.dev/)
 
