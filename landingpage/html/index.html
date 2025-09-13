@@ -87,6 +87,23 @@
       });
     }
 
+    async function fetchBetaStatus() {
+      try {
+        const res = await fetch("https://api.mcstatus.io/v2/status/java/miraficus.cz:25575");
+        const data = await res.json();
+        const statusEl = document.getElementById("beta-status");
+
+        if (data.online) {
+          const players = data.players.online;
+          statusEl.textContent = `Status: 🟢 Online — ${players} player${players !== 1 ? 's' : ''}`;
+        } else {
+          statusEl.textContent = `Status: 🔴 Offline`;
+        }
+      } catch (err) {
+        document.getElementById("beta-status").textContent = "Status: Unknown";
+      }
+    }
+
     async function fetchSkyblockStatus() {
       try {
         const res = await fetch("https://api.mcstatus.io/v2/status/java/miraficus.cz:25565");
@@ -95,16 +112,17 @@
 
         if (data.online) {
           const players = data.players.online;
-          statusEl.textContent = `🟢 Online — ${players} player${players !== 1 ? 's' : ''}`;
+          statusEl.textContent = `Status: 🟢 Online — ${players} player${players !== 1 ? 's' : ''}`;
         } else {
-          statusEl.textContent = `🔴 Offline`;
+          statusEl.textContent = `Status: 🔴 Offline`;
         }
       } catch (err) {
-        document.getElementById("skyblock-status").textContent = "⚠️ Unable to fetch status";
+        document.getElementById("skyblock-status").textContent = "Status: Unknown";
       }
     }
 
     fetchSkyblockStatus();
+    fetchBetaStatus();
   </script>
 </body>
 </html>
