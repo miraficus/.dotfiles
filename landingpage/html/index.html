@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Tunnel Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      padding: 2em;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    section {
+      margin-bottom: 2em;
+      border-left: 4px solid #4caf50;
+      padding-left: 1em;
+    }
+    h2 {
+      color: #4caf50;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 0.5em 0;
+    }
+    a {
+      color: #90caf9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .copyable {
+      cursor: pointer;
+      color: #ffcc00;
+    }
+    .copied {
+      color: #66bb6a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Forwarded Services</h1>
+
+  <section>
+    <h2>Minecraft Skyblock</h2>
+    <ul>
+      <li><span class="copyable" onclick="copyToClipboard('miraficus.cz:25565', this)">Server IP: miraficus.cz:25565</span></li>
+      <li><a href="http://miraficus.cz:8123" target="_blank">Dynmap</a></li>
+      <li id="skyblock-status">Checking server status...</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Minecraft Beta (Back2Beta)</h2>
+    <ul>
+      <li><span class="copyable" onclick="copyToClipboard('miraficus.cz:25575', this)">Server IP: miraficus.cz:25575</span></li>
+      <li><a href="http://miraficus.cz:8124" target="_blank">Beta Dynmap</a></li>
+      <li id="beta-status">Status: Unknown (custom mod)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Terraria</h2>
+    <ul>
+      <li><span class="copyable" onclick="copyToClipboard('miraficus.cz:7777', this)">Server IP: miraficus.cz:7777</span></li>
+      <li id="terraria-status">Status: Offline (placeholder)</li>
+    </ul>
+  </section>
+
+  <script>
+    function copyToClipboard(text, element) {
+      navigator.clipboard.writeText(text).then(() => {
+        element.classList.add('copied');
+        element.textContent = `Copied: ${text}`;
+        setTimeout(() => {
+          element.classList.remove('copied');
+          element.textContent = `Server IP: ${text}`;
+        }, 2000);
+      });
+    }
+
+    async function fetchSkyblockStatus() {
+      try {
+        const res = await fetch("https://api.mcstatus.io/v2/status/java/miraficus.cz:25565");
+        const data = await res.json();
+        const statusEl = document.getElementById("skyblock-status");
+
+        if (data.online) {
+          const players = data.players.online;
+          statusEl.textContent = `🟢 Online — ${players} player${players !== 1 ? 's' : ''}`;
+        } else {
+          statusEl.textContent = `🔴 Offline`;
+        }
+      } catch (err) {
+        document.getElementById("skyblock-status").textContent = "⚠️ Unable to fetch status";
+      }
+    }
+
+    fetchSkyblockStatus();
+  </script>
+</body>
+</html>
