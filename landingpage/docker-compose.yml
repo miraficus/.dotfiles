@@ -1,0 +1,10 @@
+services:
+  tunnel-dashboard:
+    image: busybox:1.35
+    container_name: tunnel-dashboard
+    volumes:
+      - ./html:/www
+    ports:
+      - "64735:64735"
+    command: httpd -f -v -p 64735 -h /www
+    restart: unless-stopped
